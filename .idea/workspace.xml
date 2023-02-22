@@ -5,14 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b277f7f3-9165-41d7-9883-fadce7b7e41c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddPartsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/ModifyPartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/ModifyProductsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/AddPartsApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/AddProductApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/ModifyPartsApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/ModifyProductsApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addParts.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addProduct.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/modifyParts.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/modifyProducts.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,6 +65,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "C:/Users/Jarod/Desktop/Docs/InventoryManagementSystem/src/main/java/jarod/inventorymanagementsystem",
     "last_opened_file_path": "C:/Users/Jarod/Desktop/Docs/InventoryManagementSystem/src/main/java/models/inventorymanagementsystem",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -62,7 +86,7 @@
   </component>
   <component name="RunManager">
     <configuration name="InventoryManagementSystem" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="jarod.inventorymanagementsystem.HelloApplication" />
+      <option name="MAIN_CLASS_NAME" value="jarod.inventorymanagementsystem.MainApplication" />
       <module name="InventoryManagementSystem" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -77,7 +101,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1677031278320</updated>
-      <workItem from="1677031279896" duration="5544000" />
+      <workItem from="1677031279896" duration="5767000" />
+      <workItem from="1677081391967" duration="9403000" />
     </task>
     <servers />
   </component>
