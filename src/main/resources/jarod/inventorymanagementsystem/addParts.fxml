@@ -129,14 +129,14 @@
       </VBox>
       <HBox alignment="CENTER" layoutY="41.0" prefHeight="41.0" prefWidth="600.0" spacing="15.0">
          <children>
-            <RadioButton mnemonicParsing="false" text="In-House" />
             <RadioButton mnemonicParsing="false" text="Outsourced" />
+            <RadioButton mnemonicParsing="false" text="In-House" />
          </children>
       </HBox>
       <HBox alignment="CENTER" layoutX="200.0" layoutY="294.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
          <children>
-            <Button mnemonicParsing="false" text="Save" />
-            <Button mnemonicParsing="false" text="Cancel" />
+            <Button fx:id="saveAddPartButton" mnemonicParsing="false" onAction="#onSaveAddPartButton" text="Save" />
+            <Button fx:id="cancelAddPartButton" mnemonicParsing="false" onAction="#onCancelAddPartButton" text="Cancel" />
          </children>
       </HBox>
    </children>
