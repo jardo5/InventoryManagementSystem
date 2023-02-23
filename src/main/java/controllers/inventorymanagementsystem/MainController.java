@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -36,6 +37,9 @@ public class MainController implements Initializable {
     public TableColumn productInventoryCol;
     public TableColumn productPriceCol;
 
+    public Button deletePartsButton;
+    public Button deleteProductsButton;
+
     private ObservableList<Part> allParts = FXCollections.observableArrayList();
     private  ObservableList<Product> allProducts = FXCollections.observableArrayList();
 
@@ -58,11 +62,21 @@ public class MainController implements Initializable {
         productInventoryCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
         productPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        //Add Parts to Table
+        //Add Temp Parts to Table
         allParts.add(new Part(1, "Part 1", 1.00, 1,1,1));
+        allParts.add(new Part(2, "Part 2", 2.00, 2,2,2));
+        allParts.add(new Part(3, "Part 3", 3.00, 3,3,3));
+        allParts.add(new Part(4, "Part 4", 4.00, 4,4,4));
+
+        //Add Temp Products to Table
+        allProducts.add(new Product(1, "Product 1", 1.00, 1,1,1));
+        allProducts.add(new Product(2, "Product 2", 2.00, 2,2,2));
+        allProducts.add(new Product(3, "Product 3", 3.00, 3,3,3));
+        allProducts.add(new Product(4, "Product 4", 4.00, 4,4,4));
 
     }
-    //Launch Add Parts Button
+
+    //Launch Add Parts Scene Button
     @FXML
     void addPartButtonClick(ActionEvent event) {
         try {
@@ -72,7 +86,7 @@ public class MainController implements Initializable {
 
         }
     }
-    //Launch Modify Part Button
+    //Launch Modify Part Scene Button
     @FXML
     void modifyPartButtonClick(ActionEvent event) {
         try {
@@ -83,7 +97,9 @@ public class MainController implements Initializable {
         }
     }
 
-    //Launch Add Product Button
+
+
+    //Launch Add Product Scene Button
     @FXML
     void addProductButtonClick(ActionEvent event) {
         try {
@@ -94,7 +110,7 @@ public class MainController implements Initializable {
         }
     }
 
-    //Launch Modify Product Button
+    //Launch Modify Product Scene Button
     @FXML
     void modifyProductButtonClick(ActionEvent event) {
         try {
@@ -103,5 +119,21 @@ public class MainController implements Initializable {
             e.printStackTrace();
 
         }
+    }
+
+
+
+    //Delete Highlighted Part Button
+    @FXML
+    void deletePartsButtonClick(ActionEvent event) {
+        Part part = partsTable.getSelectionModel().getSelectedItem();
+        allParts.remove(part);
+    }
+
+    //Delete Highlighted Product Button
+    @FXML
+    void deleteProductsButtonClick(ActionEvent event) {
+        Product product = productsTable.getSelectionModel().getSelectedItem();
+        allProducts.remove(product);
     }
 }

@@ -91,7 +91,7 @@
                <children>
                   <Button fx:id="addProductsButton" mnemonicParsing="false" onAction="#addProductButtonClick" prefHeight="25.0" prefWidth="100.0" text="Add" />
                   <Button fx:id="modifyProductsButton" mnemonicParsing="false" onAction="#modifyProductButtonClick" prefHeight="25.0" prefWidth="100.0" text="Modify" />
-                  <Button fx:id="deleteProductsButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Delete" />
+                  <Button fx:id="deleteProductsButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteProductsButtonClick" prefHeight="25.0" prefWidth="100.0" text="Delete" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -103,7 +103,7 @@
          <children>
             <Button fx:id="addPartButton" mnemonicParsing="false" onAction="#addPartButtonClick" prefHeight="25.0" prefWidth="100.0" text="Add" />
             <Button fx:id="modifyPartsButton" mnemonicParsing="false" onAction="#modifyPartButtonClick" prefWidth="100.0" text="Modify" />
-            <Button fx:id="deletePartsButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Delete" />
+            <Button fx:id="deletePartsButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deletePartsButtonClick" prefHeight="25.0" prefWidth="100.0" text="Delete" />
          </children>
          <opaqueInsets>
             <Insets />

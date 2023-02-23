@@ -15,8 +15,11 @@ public class AddPartsController implements Initializable {
     public Button saveAddPartButton;
     public Button cancelAddPartButton;
 
+
+
     public void onSaveAddPartButton(ActionEvent actionEvent) {
-        System.out.println("Save Button Clicked");
+
+
     }
 
     public void onCancelAddPartButton(ActionEvent actionEvent) {
