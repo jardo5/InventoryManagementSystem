@@ -147,7 +147,7 @@
       </TilePane>
       <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Exit" textFill="#e80000">
+            <Button fx:id="mainExit" mnemonicParsing="false" onAction="#mainExitClick" prefHeight="25.0" prefWidth="102.0" text="Exit" textFill="#e80000">
                <font>
                   <Font name="Fira Code Regular Nerd Font Complete Windows Compatible" size="12.0" />
                </font>

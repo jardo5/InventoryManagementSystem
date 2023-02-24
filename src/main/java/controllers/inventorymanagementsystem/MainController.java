@@ -17,6 +17,7 @@ import models.inventorymanagementsystem.Inventory;
 import models.inventorymanagementsystem.Part;
 import models.inventorymanagementsystem.Product;
 
+import java.io.Console;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -41,6 +42,7 @@ public class MainController implements Initializable {
 
     public TextField searchPartsField;
     public TextField searchProductsField;
+    public Button mainExit;
 
 
     private ObservableList<Part> allParts = FXCollections.observableArrayList();
@@ -153,4 +155,17 @@ public class MainController implements Initializable {
     }
 
 
+    public void mainExitClick(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Close Inventory Management System");
+        alert.setHeaderText("Are you sure you want to close this window?");
+        alert.setContentText("");
+        alert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                Stage stage = (Stage) mainExit.getScene().getWindow();
+                stage.close();
+                System.out.println("Jarod Schupp - C482 - Inventory Management System - 2023");
+            }
+        });
+    }
 }

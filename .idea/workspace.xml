@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b277f7f3-9165-41d7-9883-fadce7b7e41c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/InHouse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Outsourced.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddPartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddPartsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addParts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addParts.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +92,7 @@
       <updated>1677031278320</updated>
       <workItem from="1677031279896" duration="5767000" />
       <workItem from="1677081391967" duration="9403000" />
-      <workItem from="1677184209164" duration="16499000" />
+      <workItem from="1677184209164" duration="16808000" />
     </task>
     <servers />
   </component>
@@ -122,7 +116,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java</url>
-          <line>104</line>
+          <line>105</line>
           <properties class="controllers.inventorymanagementsystem.MainController" method="searchPartFieldClick">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
