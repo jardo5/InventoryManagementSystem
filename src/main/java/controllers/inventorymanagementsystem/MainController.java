@@ -11,7 +11,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import models.inventorymanagementsystem.Inventory;
 import models.inventorymanagementsystem.Part;
 import models.inventorymanagementsystem.Product;
 
@@ -64,10 +66,10 @@ public class MainController implements Initializable {
         productPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         //Add Temp Parts to Table
-        allParts.add(new Part(1, "Part 1", 1.00, 1,1,1));
-        allParts.add(new Part(2, "Part 2", 2.00, 2,2,2));
-        allParts.add(new Part(3, "Part 3", 3.00, 3,3,3));
-        allParts.add(new Part(4, "Part 4", 4.00, 4,4,4));
+        allParts.add(new Part(1, "Rim", 314.35, 4,1,1));
+        allParts.add(new Part(2, "Tire", 112.12, 4,2,2));
+        allParts.add(new Part(3, "Lugs", 76.89, 8,3,3));
+        allParts.add(new Part(4, "Socket", 6.50, 1,4,4));
 
         //Add Temp Products to Table
         allProducts.add(new Product(1, "Product 1", 1.00, 1,1,1));
@@ -101,26 +103,6 @@ public class MainController implements Initializable {
     //Search Parts Field with name or ID
     @FXML
     void searchPartFieldClick(ActionEvent event) {
-        String search = searchPartsField.getText();
-        ObservableList<Part> searchParts = FXCollections.observableArrayList();
-        for (Part part : allParts) {
-            // Name or ID
-            if (part.getName().toLowerCase().contains(search.toLowerCase()) || Integer.toString(part.getId()).contains(search))   {
-                searchParts.add(part);
-            }
-        }
-        partsTable.setItems(searchParts);
-        // No Results Found
-        if (searchParts.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("No Results Found");
-            alert.setHeaderText("No Results Found");
-            alert.setContentText("No Results Found");
-            alert.showAndWait();
-            // clear search field
-            searchPartsField.setText("");
-        }
-
 
     }
 
@@ -151,26 +133,6 @@ public class MainController implements Initializable {
     //Search Products Field with name or ID
     @FXML
     void searchProductFieldClick(ActionEvent event) {
-        String search = searchProductsField.getText();
-        ObservableList<Product> searchProducts = FXCollections.observableArrayList();
-        for (Product product : allProducts) {
-            // Name or ID
-            if (product.getName().toLowerCase().contains(search.toLowerCase()) || Integer.toString(product.getId()).contains(search))   {
-                searchProducts.add(product);
-            }
-        }
-        productsTable.setItems(searchProducts);
-
-        //If no results found
-        if (searchProducts.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("No Results Found");
-            alert.setHeaderText("No Results Found");
-            alert.setContentText("No results found for " + search);
-            alert.showAndWait();
-            searchPartsField.setText("");
-        }
-
 
     }
 
