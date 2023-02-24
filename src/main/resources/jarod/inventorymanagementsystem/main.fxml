@@ -44,7 +44,7 @@
                   </AnchorPane>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <TextField layoutX="49.0" layoutY="-1.0" maxHeight="27.0" prefHeight="27.0" prefWidth="216.0" promptText="Search..." AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-1.0">
+                        <TextField fx:id="searchProductsField" layoutX="49.0" layoutY="-1.0" maxHeight="27.0" onAction="#searchProductFieldClick" prefHeight="27.0" prefWidth="216.0" promptText="Search..." AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-1.0">
                            <font>
                               <Font name="Fira Code Regular Nerd Font Complete Windows Compatible" size="12.0" />
                            </font>
@@ -122,7 +122,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TextField layoutX="49.0" layoutY="1.0" promptText="Search..." AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="1.0">
+                  <TextField fx:id="searchPartsField" layoutX="49.0" layoutY="1.0" onAction="#searchPartFieldClick" promptText="Search..." AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="1.0">
                      <font>
                         <Font name="Fira Code Regular Nerd Font Complete Windows Compatible" size="12.0" />
                      </font>
