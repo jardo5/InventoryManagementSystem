@@ -47,9 +47,33 @@ public class AddPartsController implements Initializable {
         try {
             String name = addPartName.getText();
             stock = Integer.parseInt(addPartInventory.getText());
+            try {
+                if (stock < 0) {
+                    throw new NumberFormatException();
+                }
+            } catch (NumberFormatException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Invalid Inventory");
+                alert.setContentText("Inventory must be greater than 0.");
+                alert.showAndWait();
+                return;
+            }
             price = Double.parseDouble(addPartPrice.getText());
             min = Integer.parseInt(addPartMin.getText());
             max = Integer.parseInt(addPartMax.getText());
+            try {
+                if (min > max) {
+                    throw new NumberFormatException();
+                }
+            } catch (NumberFormatException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Invalid Inventory");
+                alert.setContentText("Inventory must be between minimum and maximum values.");
+                alert.showAndWait();
+                return;
+            }
             if (radioInHouse.isSelected()) {
                 machineId = Integer.parseInt(addPartIDOrName.getText());
                 InHouse inHouse = new InHouse(id, name, price, stock, min, max, machineId);
@@ -67,6 +91,7 @@ public class AddPartsController implements Initializable {
             alert.setHeaderText("Invalid Input");
             alert.setContentText("Please enter valid values for each field.");
             alert.showAndWait();
+            return;
         }
     }
 

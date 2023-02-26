@@ -8,13 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddPartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddPartsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/AddProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/AddProductApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Outsourced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Outsourced.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Part.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addParts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addParts.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addProduct.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +98,8 @@
       <workItem from="1677081391967" duration="9403000" />
       <workItem from="1677184209164" duration="17001000" />
       <workItem from="1677347033001" duration="53000" />
-      <workItem from="1677347103293" duration="11767000" />
+      <workItem from="1677347103293" duration="12588000" />
+      <workItem from="1677437234655" duration="1639000" />
     </task>
     <servers />
   </component>
@@ -132,6 +129,11 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Inventory.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

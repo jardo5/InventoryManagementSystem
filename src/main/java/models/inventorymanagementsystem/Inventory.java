@@ -14,13 +14,11 @@ public class Inventory {
     }
 
     public static Part lookupPart(int partId) {
-        if (partId > 0) {
-            for (int i = 0; i < allParts.size(); i++) {
-                if (allParts.get(i).getId() == partId) {
-                    return allParts.get(i);
-                }
-            }
-        }
+        ObservableList<Part> allParts = Inventory.getAllParts();
+        for (int i=0; i < allParts.size(); i++) {
+            Part part = allParts.get(i);
+            if (part.getId() == partId) {
+                return part;}}
         return null;
     }
     public static ObservableList<Part> lookupPart(String partName) {
@@ -33,8 +31,10 @@ public class Inventory {
                 }
             }
             return foundParts;
+        } else {
+            return allParts;
         }
-        return null;
+
     }
     public static void updatePart(int index, Part selectedPart) {
 
@@ -53,11 +53,27 @@ public class Inventory {
         allProducts.add(newProduct);
     }
     public static Product lookupProduct(int productId) {
-
+        ObservableList<Product> allProducts = Inventory.getAllProducts();
+        for (int i=0; i < allProducts.size(); i++) {
+            Product product = allProducts.get(i);
+            if (product.getId() == productId) {
+                return product;}}
         return null;
+
     }
     public static ObservableList<Product> lookupProduct(String productName) {
-        return null;
+        if (!productName.isEmpty()) {
+            ObservableList<Product> allProducts = getAllProducts();
+            ObservableList<Product> foundProducts = FXCollections.observableArrayList();
+            for (Product product : allProducts) {
+                if (product.getName().toLowerCase().contains(productName.toLowerCase())) {
+                    foundProducts.add(product);
+                }
+            }
+            return foundProducts;
+        } else {
+            return allProducts;
+        }
     }
     public static void updateProduct(int index, Product newProduct) {
 
@@ -81,7 +97,7 @@ public class Inventory {
     }
     public static int setProductID = 0;
     public static int increaseProductID() {
-        int newID = setProductID + 1;
+        int newID = setProductID + 1000;
         while (lookupProduct(newID) != null) {
             newID++;
         }

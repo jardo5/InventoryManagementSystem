@@ -32,22 +32,32 @@ public class AddProductController {
         String name = addProductName.getText();
         try {
             stock = Integer.parseInt(addProductInventory.getText());
-            if (stock < 1) {
+            try {
+                if (stock < 0) {
+                    throw new NumberFormatException();
+                }
+            } catch (NumberFormatException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setHeaderText("Invalid input");
+                alert.setHeaderText("Invalid Inventory");
                 alert.setContentText("Inventory must be greater than 0.");
                 alert.showAndWait();
+                return;
             }
             price = Double.parseDouble(addProductPrice.getText());
             min = Integer.parseInt(addProductMin.getText());
             max = Integer.parseInt(addProductMax.getText());
-            if (min > max) {
+            try {
+                if (min > max) {
+                    throw new NumberFormatException();
+                }
+            } catch (NumberFormatException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setHeaderText("Invalid input");
-                alert.setContentText("Min cannot be greater than Max.");
-                alert.show();
+                alert.setHeaderText("Invalid Inventory");
+                alert.setContentText("Inventory must be between minimum and maximum values.");
+                alert.showAndWait();
+                return;
             }
             Product product = new Product(id, name, price, stock, min, max);
             Inventory.addProduct(product);
