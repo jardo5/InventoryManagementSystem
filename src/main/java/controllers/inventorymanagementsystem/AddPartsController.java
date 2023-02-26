@@ -3,12 +3,15 @@ package controllers.inventorymanagementsystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.paint.Stop;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import models.inventorymanagementsystem.InHouse;
+import models.inventorymanagementsystem.Inventory;
+import models.inventorymanagementsystem.Outsourced;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -21,8 +24,50 @@ public class AddPartsController implements Initializable {
     public RadioButton radioOutsource; //Company Name
     public Text idOrName;
 
-    public void onSaveAddPartButton(ActionEvent actionEvent) {
+    public TextField addPartID;
+    public TextField addPartName;
+    public TextField addPartInventory;
+    public TextField addPartPrice;
+    public TextField addPartMax;
+    public TextField addPartMin;
+    public TextField addPartIDOrName;
 
+
+    public void onSaveAddPartButton(ActionEvent actionEvent) throws IOException {
+        int stock = 0;
+        int min;
+        int max = 0;
+        int id = Inventory.increasePartID();
+        String companyName;
+        int machineId;
+        double price;
+        // Collect data from text fields
+        // Add data to allParts list
+        // Close window
+        try {
+            String name = addPartName.getText();
+            stock = Integer.parseInt(addPartInventory.getText());
+            price = Double.parseDouble(addPartPrice.getText());
+            min = Integer.parseInt(addPartMin.getText());
+            max = Integer.parseInt(addPartMax.getText());
+            if (radioInHouse.isSelected()) {
+                machineId = Integer.parseInt(addPartIDOrName.getText());
+                InHouse inHouse = new InHouse(id, name, price, stock, min, max, machineId);
+                Inventory.addPart(inHouse);
+            } else if (radioOutsource.isSelected()) {
+                companyName = addPartIDOrName.getText();
+                Outsourced outsourced = new Outsourced(id, name, price, stock, min, max, companyName);
+                Inventory.addPart(outsourced);
+            }
+            Stage stage = (Stage) saveAddPartButton.getScene().getWindow();
+            stage.close();
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Invalid Input");
+            alert.setContentText("Please enter valid values for each field.");
+            alert.showAndWait();
+        }
     }
 
     public void onCancelAddPartButton(ActionEvent actionEvent) {
@@ -45,12 +90,15 @@ public class AddPartsController implements Initializable {
 
     }
 
-    public void onOutsourced(ActionEvent actionEvent) {
-        idOrName.setText("Company Name");
+    public void radioOutsourceToggle(ActionEvent actionEvent) {
+        if (radioOutsource.isSelected()) {
+            idOrName.setText("Company Name");
+        }
     }
 
-    public void onInHouse(ActionEvent actionEvent) {
-        idOrName.setText("Machine ID");
-        idOrName.setFont(Font.font ("Fira Code", 12));
+    public void radioInHouseToggle(ActionEvent actionEvent) {
+        if (radioInHouse.isSelected()) {
+            idOrName.setText("Machine ID");
+        }
     }
 }

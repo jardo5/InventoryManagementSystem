@@ -21,6 +21,8 @@ import java.io.Console;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static models.inventorymanagementsystem.Inventory.*;
+
 
 public class MainController implements Initializable {
 
@@ -42,17 +44,18 @@ public class MainController implements Initializable {
 
     public TextField searchPartsField;
     public TextField searchProductsField;
+
     public Button mainExit;
 
+    private static boolean firstTime = true;
 
-    private ObservableList<Part> allParts = FXCollections.observableArrayList();
-    private  ObservableList<Product> allProducts = FXCollections.observableArrayList();
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        //Populate Parts Table to ArrayList
-        partsTable.setItems(allParts);
+        partsTable.setItems(Inventory.getAllParts());
         partIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         partNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         partInventoryCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
@@ -60,28 +63,19 @@ public class MainController implements Initializable {
 
 
 
-        //Populate Products Table to ArrayList
-        productsTable.setItems(allProducts);
+        productsTable.setItems(Inventory.getAllProducts());
         productIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         productNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         productInventoryCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
         productPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        //Add Temp Parts to Table
-        allParts.add(new Part(1, "Rim", 314.35, 4,1,1));
-        allParts.add(new Part(2, "Tire", 112.12, 4,2,2));
-        allParts.add(new Part(3, "Lugs", 76.89, 8,3,3));
-        allParts.add(new Part(4, "Socket", 6.50, 1,4,4));
-
-        //Add Temp Products to Table
-        allProducts.add(new Product(1, "Product 1", 1.00, 1,1,1));
-        allProducts.add(new Product(2, "Product 2", 2.00, 2,2,2));
-        allProducts.add(new Product(3, "Product 3", 3.00, 3,3,3));
-        allProducts.add(new Product(4, "Product 4", 4.00, 4,4,4));
+    }
+    //Add Temporary Parts to Table
+    public void addTempParts() {
 
     }
 
-    //Launch Add Parts Scene Button
+
     @FXML
     void addPartButtonClick(ActionEvent event) {
         try {
@@ -91,7 +85,7 @@ public class MainController implements Initializable {
 
         }
     }
-    //Launch Modify Part Scene Button
+
     @FXML
     void modifyPartButtonClick(ActionEvent event) {
         try {
@@ -102,15 +96,33 @@ public class MainController implements Initializable {
         }
     }
 
-    //Search Parts Field with name or ID
     @FXML
     void searchPartFieldClick(ActionEvent event) {
+        if (!searchPartsField.getText().isEmpty()) {
+            String search = searchPartsField.getText();
+            ObservableList<Part> searchParts = FXCollections.observableArrayList();
+            for (Part part : getAllParts()) {
+                if (part.getName().toLowerCase().contains(search.toLowerCase())) {
+                    searchParts.add(part);
+                }
+                else if (String.valueOf(part.getId()).contains(search)) {
+                    searchParts.add(part);
+                }
+            }
+            partsTable.setItems(searchParts);
+        }
+        else {
+            partsTable.setItems(getAllParts());
+        }
 
     }
 
 
 
-    //Launch Add Product Scene Button
+
+
+
+
     @FXML
     void addProductButtonClick(ActionEvent event) {
         try {
@@ -121,7 +133,6 @@ public class MainController implements Initializable {
         }
     }
 
-    //Launch Modify Product Scene Button
     @FXML
     void modifyProductButtonClick(ActionEvent event) {
         try {
@@ -132,26 +143,43 @@ public class MainController implements Initializable {
         }
     }
 
-    //Search Products Field with name or ID
     @FXML
     void searchProductFieldClick(ActionEvent event) {
-
+        String productName = searchProductsField.getText();
+        ObservableList<Product> products = lookupProduct(productName);
+        if (products.size() == 0) {
+            try {
+                int productId = Integer.parseInt(productName);
+                Product product = lookupProduct(productId);
+                if (product != null)
+                    products.add(product);
+            } catch (NumberFormatException e) {
+                //ignore
+            }
+        }
+        productsTable.setItems(products);
+        //display error label if no products detected in the table
+        if (products.size() == 0) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No products found");
+            alert.setContentText("Please try again");
+            alert.showAndWait();
+        }
     }
 
 
 
-    //Delete Highlighted Part Button
+
     @FXML
     void deletePartsButtonClick(ActionEvent event) {
-        Part part = partsTable.getSelectionModel().getSelectedItem();
-        allParts.remove(part);
+
     }
 
-    //Delete Highlighted Product Button
+
     @FXML
     void deleteProductsButtonClick(ActionEvent event) {
-        Product product = productsTable.getSelectionModel().getSelectedItem();
-        allProducts.remove(product);
+
     }
 
 
@@ -163,8 +191,9 @@ public class MainController implements Initializable {
         alert.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK) {
                 Stage stage = (Stage) mainExit.getScene().getWindow();
-                stage.close();
                 System.out.println("Jarod Schupp - C482 - Inventory Management System - 2023");
+                stage.close();
+
             }
         });
     }

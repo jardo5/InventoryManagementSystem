@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import models.inventorymanagementsystem.InHouse;
+import models.inventorymanagementsystem.Inventory;
 
 import java.io.IOException;
 

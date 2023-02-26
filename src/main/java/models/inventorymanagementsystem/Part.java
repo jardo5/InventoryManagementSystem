@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
  *
  * @author Jarod Schupp
  */
-public class Part {
+public abstract class Part {
     private int id;
     private String name;
     private double price;
