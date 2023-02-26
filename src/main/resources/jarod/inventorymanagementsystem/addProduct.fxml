@@ -91,7 +91,7 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
                            <children>
-                              <TextField fx:id="addProductID" prefHeight="25.0" prefWidth="114.0" />
+                              <TextField fx:id="addProductID" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="114.0" promptText="Disabled" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
