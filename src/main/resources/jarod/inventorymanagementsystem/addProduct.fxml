@@ -130,6 +130,11 @@
                      <children>
                         <HBox alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="396.0">
                            <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Parts" textAlignment="CENTER" wrappingWidth="203.15625">
+                                 <font>
+                                    <Font name="Fira Code Bold Nerd Font Complete Windows Compatible" size="24.0" />
+                                 </font>
+                              </Text>
                               <TextField fx:id="searchPartsField" alignment="BASELINE_LEFT" onAction="#searchPartFieldClick" prefHeight="25.0" prefWidth="178.0" promptText="Search by ID or Name...">
                                  <font>
                                     <Font name="Fira Code Regular Nerd Font Complete Windows Compatible" size="12.0" />
@@ -143,14 +148,19 @@
                               </TextField>
                            </children>
                         </HBox>
-                        <TableView prefHeight="200.0" prefWidth="200.0">
+                        <TableView fx:id="partsTable" prefHeight="200.0" prefWidth="200.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
+                            <TableColumn fx:id="partIDCol" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="partNameCol" prefWidth="75.0" text="Name" />
+                              <TableColumn fx:id="partInventoryCol" prefWidth="75.0" text="Inventory" />
+                              <TableColumn fx:id="partPriceCol" prefWidth="75.0" text="Price" />
                           </columns>
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
                         <HBox alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="399.0">
                            <children>
@@ -164,11 +174,16 @@
                               <Insets />
                            </VBox.margin>
                         </HBox>
-                        <TableView prefHeight="200.0" prefWidth="200.0">
+                        <TableView fx:id="addProductTable" prefHeight="200.0" prefWidth="200.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
+                            <TableColumn fx:id="addProductIDCol" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="addProductNameCol" prefWidth="75.0" text="Name" />
+                              <TableColumn fx:id="addProductInventoryCol" prefWidth="75.0" text="Inventory" />
+                              <TableColumn fx:id="addProductPriceCol" prefWidth="75.0" text="Price" />
                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
                         <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="396.0">
                            <children>

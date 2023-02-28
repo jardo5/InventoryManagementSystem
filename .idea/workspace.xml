@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b277f7f3-9165-41d7-9883-fadce7b7e41c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddPartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddPartsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/AddProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/AddProductApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addProduct.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +98,8 @@
       <workItem from="1677184209164" duration="17001000" />
       <workItem from="1677347033001" duration="53000" />
       <workItem from="1677347103293" duration="12588000" />
-      <workItem from="1677437234655" duration="1639000" />
+      <workItem from="1677437234655" duration="2409000" />
+      <workItem from="1677627019010" duration="1031000" />
     </task>
     <servers />
   </component>
@@ -130,10 +130,24 @@
           </properties>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Inventory.java</url>
-          <line>16</line>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java</url>
+          <line>121</line>
+          <properties class="controllers.inventorymanagementsystem.AddProductController" method="searchPartFieldClick">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

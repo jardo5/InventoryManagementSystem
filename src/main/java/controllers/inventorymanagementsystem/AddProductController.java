@@ -1,11 +1,12 @@
 package controllers.inventorymanagementsystem;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import models.inventorymanagementsystem.Inventory;
+import models.inventorymanagementsystem.Part;
 import models.inventorymanagementsystem.Product;
 
 public class AddProductController {
@@ -19,9 +20,41 @@ public class AddProductController {
 
     public Button saveAddProductButton;
     public Button cancelAddProductButton;
+
     public Button addProductRemovePart;
     public Button addProductAddButton;
+
     public TextField searchPartsField;
+
+    public TableView partsTable;
+    public TableColumn partIDCol;
+    public TableColumn partNameCol;
+    public TableColumn partInventoryCol;
+    public TableColumn partPriceCol;
+
+    public TableView addProductTable;
+    public TableColumn addProductIDCol;
+    public TableColumn addProductNameCol;
+    public TableColumn addProductInventoryCol;
+    public TableColumn addProductPriceCol;
+
+    private ObservableList<Part> addProductParts = FXCollections.observableArrayList();
+
+    public void initialize() {
+        partsTable.setItems(Inventory.getAllParts());
+        partIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        partNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        partInventoryCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        partPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+
+        addProductIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        addProductNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        addProductInventoryCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        addProductPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+        addProductTable.setItems(addProductParts);
+    }
+
 
     public void saveAddProductButtonClick() {
         int stock = 0;
@@ -87,16 +120,63 @@ public class AddProductController {
     }
 
     public void searchPartFieldClick() {
-        // Search for part by name or ID
-        // Display results in table
+        String search = searchPartsField.getText();
+        ObservableList<Part> parts = Inventory.lookupPart(search);
+        if (parts.size() != 0) {
+            partsTable.setItems(parts);
+        } else {
+            try {
+                int id = Integer.parseInt(search);
+                Part part = Inventory.lookupPart(id);
+                if (part != null) {
+                    parts.add(part);
+                }
+            } catch (NumberFormatException e) {
+                // Do nothing
+            }
+            partsTable.setItems(parts);
+        }
     }
 
     public void addProductAddButtonClick() {
-        // Add selected part to associated parts list
+        Part part = (Part) partsTable.getSelectionModel().getSelectedItem();
+        if (part != null) {
+            addProductParts.add(part);
+            addProductTable.setItems(addProductParts);
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No part selected");
+            alert.setContentText("Please select a part to add.");
+            alert.showAndWait();
+        }
+
     }
 
     public void addProductRemovePartClick() {
-        // Remove selected part from associated parts list
+        // Remove selected part from table
+        Part part = (Part) addProductTable.getSelectionModel().getSelectedItem();
+        if (part != null) {
+            // Alert to confirm removing part
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Remove Part?");
+            alert.setHeaderText("Are you sure you want to remove this part?");
+            alert.setContentText("This action is permanent.");
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    addProductParts.remove(part);
+                    addProductTable.setItems(addProductParts);
+                }
+            });
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No part selected");
+            alert.setContentText("Please select a part to remove.");
+            alert.showAndWait();
+        }
     }
 
 }

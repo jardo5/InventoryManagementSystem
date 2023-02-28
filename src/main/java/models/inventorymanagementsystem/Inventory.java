@@ -3,6 +3,8 @@ package models.inventorymanagementsystem;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.Random;
+
 public class Inventory {
 
 
@@ -88,7 +90,8 @@ public class Inventory {
 
     public static int setPartID = 0;
     public static int increasePartID() {
-        int newID = setPartID + 1;
+        Random rand = new Random();
+        int newID = setPartID + rand.nextInt(10000);
         while (lookupPart(newID) != null) {
             newID++;
         }
@@ -97,7 +100,9 @@ public class Inventory {
     }
     public static int setProductID = 0;
     public static int increaseProductID() {
-        int newID = setProductID + 1000;
+        Random rand = new Random();
+
+        int newID = setProductID + rand.nextInt(10000) ;
         while (lookupProduct(newID) != null) {
             newID++;
         }
