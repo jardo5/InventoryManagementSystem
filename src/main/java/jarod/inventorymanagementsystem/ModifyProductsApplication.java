@@ -1,9 +1,17 @@
 package jarod.inventorymanagementsystem;
 
+/**
+ * @author Jarod Schupp
+ */
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+/**
+ * Main class (Launcher) for ModifyProducts.
+ */
 
 public class ModifyProductsApplication extends Application {
     @Override

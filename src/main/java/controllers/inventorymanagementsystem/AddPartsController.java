@@ -1,5 +1,9 @@
 package controllers.inventorymanagementsystem;
 
+/**
+ * @author Jarod Schupp
+ */
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,23 +19,69 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller class for addPart.fxml. This class is responsible for handling the addition of a new Part to the Parts List.
+ */
+
 public class AddPartsController implements Initializable {
-    @FXML
+    /**
+     * Button to save the new Part
+     */
     public Button saveAddPartButton;
+    /**
+     * Button to cancel the addition of a new Part
+     */
     public Button cancelAddPartButton;
+    /**
+     * Radio button for InHouse
+     */
 
     public RadioButton radioInHouse; //Machine ID
+    /**
+     * Radio button for Outsourced
+     */
     public RadioButton radioOutsource; //Company Name
+    /**
+     * Textfield for Company Name or Machine ID
+     */
     public Text idOrName;
+    /**
+     * Textfield for Part ID
+     */
 
     public TextField addPartID;
+    /**
+     * Textfield for Part Name
+     */
     public TextField addPartName;
+    /**
+     * Textfield for Part Inventory
+     */
     public TextField addPartInventory;
+    /**
+     * Textfield for Part Price
+     */
     public TextField addPartPrice;
+    /**
+     * Textfield for Part Max
+     */
     public TextField addPartMax;
+    /**
+     * Textfield for Part Min
+     */
     public TextField addPartMin;
+    /**
+     * Textfield for Company Name or Machine ID
+     */
     public TextField addPartIDOrName;
 
+    /**
+     * Method that on save button click, saves the new Part to the Parts List.
+     * Validates user input and displays error messages if input is invalid.
+     * Closes the window on save.
+     * @param actionEvent on save button click adds new Part to Parts List
+     * @throws IOException if input is invalid
+     */
 
     public void onSaveAddPartButton(ActionEvent actionEvent) throws IOException {
         int stock = 0;
@@ -60,7 +110,7 @@ public class AddPartsController implements Initializable {
             min = Integer.parseInt(addPartMin.getText());
             max = Integer.parseInt(addPartMax.getText());
             try {
-                if (min > max) {
+                if (min > stock && stock > max) {
                     throw new NumberFormatException();
                 }
             } catch (NumberFormatException e) {
@@ -91,6 +141,10 @@ public class AddPartsController implements Initializable {
             return;
         }
     }
+    /**
+     * Method that on cancel button click, closes the window.
+     * @param actionEvent on cancel button click closes the window
+     */
 
     public void onCancelAddPartButton(ActionEvent actionEvent) {
         // Alert to confirm closing window
@@ -109,14 +163,24 @@ public class AddPartsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        //ignore
     }
+
+    /**
+     * Method that on radio button toggle, changes the label for the Company Name or Machine ID textfield.
+     * @param actionEvent on radio button toggle changes the label for the Company Name or Machine ID textfield
+     */
 
     public void radioOutsourceToggle(ActionEvent actionEvent) {
         if (radioOutsource.isSelected()) {
             idOrName.setText("Company Name");
         }
     }
+
+    /**
+     * Method that on radio button toggle, changes the label for the Company Name or Machine ID textfield.
+     * @param actionEvent on radio button toggle changes the label for the Company Name or Machine ID textfield
+     */
 
     public void radioInHouseToggle(ActionEvent actionEvent) {
         if (radioInHouse.isSelected()) {

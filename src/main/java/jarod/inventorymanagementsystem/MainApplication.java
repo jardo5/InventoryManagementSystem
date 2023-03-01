@@ -1,5 +1,9 @@
 package jarod.inventorymanagementsystem;
 
+/**
+ * @author Jarod Schupp
+ */
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,6 +14,10 @@ import models.inventorymanagementsystem.Outsourced;
 import models.inventorymanagementsystem.Product;
 
 import java.io.IOException;
+
+/**
+ * Main class (Launcher) for the Main scene.
+ */
 
 public class MainApplication extends Application {
     @Override

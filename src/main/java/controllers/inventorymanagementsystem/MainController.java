@@ -1,5 +1,9 @@
 package controllers.inventorymanagementsystem;
 
+/**
+ * @author Jarod Schupp
+ */
+
 import jarod.inventorymanagementsystem.AddPartsApplication;
 import jarod.inventorymanagementsystem.AddProductApplication;
 import jarod.inventorymanagementsystem.ModifyPartApplication;
@@ -24,35 +28,86 @@ import java.util.ResourceBundle;
 
 import static models.inventorymanagementsystem.Inventory.*;
 
+/**
+ * Controller class for main.fxml. This class is responsible for handling the main screen of the application. It is responsible for the Parts and Products tables, as well as the search fields.
+ */
 
 public class MainController implements Initializable {
 
+    /**
+     * Parts Table and Columns
+     */
     public TableView<Part> partsTable;
+    /**
+     * Parts Table ID Column
+     */
     
     public TableColumn partIDCol;
+    /**
+     * Parts Table Name Column
+     */
     public TableColumn partNameCol;
+    /**
+     * Parts Table Inventory Column
+     */
     public TableColumn partInventoryCol;
+    /**
+     * Parts Table Price Column
+     */
     public TableColumn partPriceCol;
 
+    /**
+     * Products Table and Columns
+     */
     public TableView<Product> productsTable;
+    /**
+     * Products Table ID Column
+     */
     public TableColumn productIDCol;
+    /**
+     * Products Table Name Column
+     */
     public TableColumn productNameCol;
+    /**
+     * Products Table Inventory Column
+     */
     public TableColumn productInventoryCol;
+    /**
+     * Products Table Price Column
+     */
     public TableColumn productPriceCol;
+    /**
+     * Delete Part Button
+     */
 
     public Button deletePartsButton;
+    /**
+     * Delete Product Button
+     */
     public Button deleteProductsButton;
 
+    /**
+     * Search Parts Field
+     */
+
     public TextField searchPartsField;
+    /**
+     * Search Products Field
+     */
     public TextField searchProductsField;
+    /**
+     * Exit App Button
+     */
 
     public Button mainExit;
 
 
-
-
-
-
+    /**
+     * This method is responsible for the search functionality of the Parts & Products table.
+     * Adds functionality to the columns of the Parts and Products tables.q
+     * @param url passes resources of the FXML
+     * @param resourceBundle manages resources
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         partsTable.setItems(Inventory.getAllParts());
@@ -71,7 +126,10 @@ public class MainController implements Initializable {
 
     }
 
-
+    /**
+     * Opens the Add Product screen
+     * @param event on click open Add Product screen
+     */
     @FXML
     void addPartButtonClick(ActionEvent event) {
         try {
@@ -81,6 +139,11 @@ public class MainController implements Initializable {
 
         }
     }
+
+    /**
+     * Opens the Modify Product screen
+     * @param event on click open Modify Product screen
+     */
 
     @FXML
     void modifyPartButtonClick(ActionEvent event) {
@@ -106,6 +169,11 @@ public class MainController implements Initializable {
         }
     }
 
+    /**
+     * Allows the user to search for a part by name or ID
+     * @param event on click text field will search for part
+     */
+
     @FXML
     void searchPartFieldClick(ActionEvent event) {
         if (!searchPartsField.getText().isEmpty()) {
@@ -126,6 +194,11 @@ public class MainController implements Initializable {
         }
 
     }
+
+    /**
+     * On selection, deletes the part from the table
+     * @param event on click deletes part from table
+     */
 
     @FXML
     void deletePartsButtonClick(ActionEvent event) {
@@ -150,6 +223,10 @@ public class MainController implements Initializable {
         }
     }
 
+    /**
+     * Opens the Add Product screen
+     * @param event on click open Add Product screen
+     */
 
     @FXML
     void addProductButtonClick(ActionEvent event) {
@@ -160,6 +237,11 @@ public class MainController implements Initializable {
 
         }
     }
+
+    /**
+     * Opens the Modify Product screen
+     * @param event on click open Modify Product screen
+     */
 
     @FXML
     void modifyProductButtonClick(ActionEvent event) {
@@ -184,6 +266,11 @@ public class MainController implements Initializable {
             alert.showAndWait();
         }
     }
+
+    /**
+     * Allows the user to search for a product by name or ID
+     * @param event on click text field will search for product
+     */
 
     @FXML
     void searchProductFieldClick(ActionEvent event) {
@@ -210,6 +297,11 @@ public class MainController implements Initializable {
         }
     }
 
+    /**
+     * On selection, deletes the product from the table
+     * @param event on click deletes product from table
+     */
+
 
     @FXML
     void deleteProductsButtonClick(ActionEvent event) {
@@ -233,6 +325,11 @@ public class MainController implements Initializable {
             alert.showAndWait();
         }
     }
+
+    /**
+     * Exits the program
+     * @param actionEvent on click exits program
+     */
 
 
     public void mainExitClick(ActionEvent actionEvent) {

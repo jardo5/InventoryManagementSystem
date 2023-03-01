@@ -1,6 +1,11 @@
 package controllers.inventorymanagementsystem;
 
+/**
+ * @author Jarod Schupp
+ */
+
 import javafx.application.Application;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -12,28 +17,86 @@ import models.inventorymanagementsystem.Part;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ModifyPartController {
+/**
+ * Controller class for modifyPart.fxml. This class is responsible for handling the modification to the Parts List.
+ */
+
+public class ModifyPartController implements Initializable {
+
+    /**
+     * Textfield for Company Name or Machine ID
+     */
 
     public Text idOrName;
+    /**
+     * Textfield for Part ID
+     */
 
     public TextField modifyPartID;
+    /**
+     * Textfield for Part Name
+     */
+
     public TextField modifyPartName;
+    /**
+     * Textfield for Part Inventory
+     */
+
     public TextField modifyPartInventory;
+    /**
+     * Textfield for Part Price
+     */
+
     public TextField modifyPartPrice;
+    /**
+     * Textfield for Part Max
+     */
+
     public TextField modifyPartMax;
+    /**
+     * Textfield for Part Min
+     */
+
     public TextField modifyPartMin;
+    /**
+     * Textfield for Company Name or Machine ID
+     */
+
     public TextField modifyPartIDOrName;
+    /**
+     * Radio button for Outsourced
+     */
 
     public RadioButton radioOutsource;
+    /**
+     * Radio button for InHouse
+     */
+
     public RadioButton radioInHouse;
+    /**
+     * ToggleGroup for radio buttons
+     */
+
     public ToggleGroup modifyPartRadioToggle;
+    /**
+     * Save button
+     */
 
     public Button saveModifyPartButton;
+    /**
+     * Cancel button
+     */
+
     public Button cancelModifyPartButton;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        //Ignored
     }
+
+    /**
+     * Method to retrieve the part data from the selected part in the Parts List.
+     * @param part The part to be modified.
+     */
 
     public void retrievePartData(Part part) {
         modifyPartID.setText(String.valueOf(part.getId()));
@@ -53,12 +116,24 @@ public class ModifyPartController {
         }
     }
 
+    /**
+     * Method to toggle the Company Name or Machine ID textfield.
+     */
+
     public void radioOutsourceToggle() {
         idOrName.setText("Company Name");
     }
+
+    /**
+     * Method to toggle the Company Name or Machine ID textfield.
+     */
     public void radioInHouseToggle() {
         idOrName.setText("Machine ID");
     }
+
+    /**
+     * Method to save the modification of the part and add to ObservableList.
+     */
 
     public void onSaveModifyPartButton() {
         System.out.println("Save button clicked test");
@@ -106,7 +181,7 @@ public class ModifyPartController {
             }
             try {
                 price = Double.parseDouble(modifyPartPrice.getText());
-                if (max > min) {
+                if (max > stock && stock > min) {
                     if(radioInHouse.isSelected()) {
                         try {
                             machineId = Integer.parseInt(modifyPartIDOrName.getText());
@@ -153,6 +228,10 @@ public class ModifyPartController {
             }
         }
     }
+
+    /**
+     * Method to cancel the modification of the part and close the window.
+     */
     public void onCancelModifyPartButton() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Close Add Product?");
