@@ -39,10 +39,16 @@ public class Inventory {
 
     }
     public static void updatePart(int index, Part selectedPart) {
+        for (int i=0; i < allParts.size(); i++) {
+            Part part = allParts.get(i);
+            if (part.getId() == index) {
+                allParts.set(i, selectedPart);
+            }
+        }
 
     }
     public static boolean deletePart(Part selectedPart) {
-        return false;
+        return allParts.remove(selectedPart);
     }
     public static ObservableList<Part> getAllParts() {
         return allParts;
@@ -78,10 +84,16 @@ public class Inventory {
         }
     }
     public static void updateProduct(int index, Product newProduct) {
+        for (int i=0; i < allProducts.size(); i++) {
+            Product product = allProducts.get(i);
+            if (product.getId() == index) {
+                allProducts.set(i, newProduct);
+            }
+        }
 
     }
     public static boolean deleteProduct(Product selectedProduct) {
-        return false;
+        return allProducts.remove(selectedProduct);
     }
     public static ObservableList<Product> getAllProducts() {
         return allProducts;
@@ -93,6 +105,9 @@ public class Inventory {
         Random rand = new Random();
         int newID = setPartID + rand.nextInt(10000);
         while (lookupPart(newID) != null) {
+            newID++;
+        }
+        if (allParts.contains(newID)){
             newID++;
         }
         setPartID = newID;

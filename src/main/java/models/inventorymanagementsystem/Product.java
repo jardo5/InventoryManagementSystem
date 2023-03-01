@@ -2,6 +2,7 @@ package models.inventorymanagementsystem; /**
 * Supplied class Part.java 
  */
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
@@ -9,6 +10,7 @@ import javafx.collections.ObservableList;
  * @author Place Your Name Here
  */
 public class Product {
+    private ObservableList<Part> associatedParts = FXCollections.observableArrayList();
     private int id;
     private String name;
     private double price;
@@ -75,14 +77,19 @@ public class Product {
     }
 
     public void addAssociatedPart(Part part){
-
+        this.associatedParts.add(part);
     }
 
     public boolean deleteAssociatedPart(Part selectedAssociatedPart){
-        return true;
+        if (this.associatedParts.contains(selectedAssociatedPart)) {
+            this.associatedParts.remove(selectedAssociatedPart);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public ObservableList<Part> getAllAssociatedParts(){
-        return null;
+        return this.associatedParts;
     }
 }

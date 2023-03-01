@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.inventorymanagementsystem.ModifyPartController">
+   <children>
+      <StackPane layoutY="7.0" prefHeight="34.0" prefWidth="600.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modify Part">
+               <font>
+                  <Font name="Fira Code Bold Nerd Font Complete Windows Compatible" size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
+      <VBox alignment="CENTER" layoutX="200.0" layoutY="94.0" prefHeight="206.0" prefWidth="81.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+                     <font>
+                        <Font name="Fira Code Regular Nerd Font Complete Windows Compatible" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Fira Code Regular Nerd Font Complete Windows Compatible" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inv">
+                     <font>
+                        <Font name="Fira Code Regular Nerd Font Complete Windows Compatible" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price/Cost">
+                     <font>
+                        <Font name="Fira Code Regular Nerd Font Complete Windows Compatible" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Max">
+                     <font>
+                        <Font name="Fira Code Regular Nerd Font Complete Windows Compatible" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Min">
+                     <font>
+                        <Font name="Fira Code Regular Nerd Font Complete Windows Compatible" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <Text fx:id="idOrName" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine ID">
+                     <font>
+                        <Font name="Fira Code Regular Nerd Font Complete Windows Compatible" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="300.0" layoutY="94.0" prefHeight="200.0" prefWidth="111.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="modifyPartID" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="114.0" promptText="Disabled" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="modifyPartName" prefHeight="25.0" prefWidth="114.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="modifyPartInventory" prefHeight="25.0" prefWidth="114.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="modifyPartPrice" prefHeight="25.0" prefWidth="114.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="modifyPartMax" prefHeight="25.0" prefWidth="114.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="modifyPartMin" prefHeight="25.0" prefWidth="114.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="99.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="modifyPartIDOrName" prefHeight="25.0" prefWidth="114.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutY="41.0" prefHeight="41.0" prefWidth="600.0" spacing="15.0">
+         <children>
+            <RadioButton fx:id="radioOutsource" mnemonicParsing="false" onAction="#radioOutsourceToggle" text="Outsourced" toggleGroup="$modifyPartRadioToggle">
+               <toggleGroup>
+                  <ToggleGroup fx:id="modifyPartRadioToggle" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="radioInHouse" mnemonicParsing="false" onAction="#radioInHouseToggle" selected="true" text="In-House" toggleGroup="$modifyPartRadioToggle" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="200.0" layoutY="294.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+         <children>
+            <Button fx:id="saveModifyPartButton" mnemonicParsing="false" onAction="#onSaveModifyPartButton" text="Save" />
+            <Button fx:id="cancelModifyPartButton" mnemonicParsing="false" onAction="#onCancelModifyPartButton" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

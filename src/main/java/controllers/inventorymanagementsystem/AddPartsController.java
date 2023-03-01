@@ -41,9 +41,6 @@ public class AddPartsController implements Initializable {
         String companyName;
         int machineId;
         double price;
-        // Collect data from text fields
-        // Add data to allParts list
-        // Close window
         try {
             String name = addPartName.getText();
             stock = Integer.parseInt(addPartInventory.getText());

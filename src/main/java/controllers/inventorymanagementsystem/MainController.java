@@ -2,22 +2,23 @@ package controllers.inventorymanagementsystem;
 
 import jarod.inventorymanagementsystem.AddPartsApplication;
 import jarod.inventorymanagementsystem.AddProductApplication;
-import jarod.inventorymanagementsystem.ModifyPartsApplication;
+import jarod.inventorymanagementsystem.ModifyPartApplication;
 import jarod.inventorymanagementsystem.ModifyProductsApplication;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.inventorymanagementsystem.Inventory;
 import models.inventorymanagementsystem.Part;
 import models.inventorymanagementsystem.Product;
 
-import java.io.Console;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -47,7 +48,6 @@ public class MainController implements Initializable {
 
     public Button mainExit;
 
-    private static boolean firstTime = true;
 
 
 
@@ -70,10 +70,6 @@ public class MainController implements Initializable {
         productPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
     }
-    //Add Temporary Parts to Table
-    public void addTempParts() {
-
-    }
 
 
     @FXML
@@ -88,11 +84,25 @@ public class MainController implements Initializable {
 
     @FXML
     void modifyPartButtonClick(ActionEvent event) {
-        try {
-            new ModifyPartsApplication().start(new Stage());
-        } catch (Exception e) {
-            e.printStackTrace();
-
+        if (partsTable.getSelectionModel().getSelectedItem() != null) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/jarod/inventorymanagementsystem/modifyPart.fxml"));
+                Parent root = loader.load();
+                ModifyPartController controller = loader.getController();
+                controller.retrievePartData(partsTable.getSelectionModel().getSelectedItem());
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No part selected");
+            alert.setContentText("Please select a part to modify");
+            alert.showAndWait();
         }
     }
 
@@ -117,10 +127,28 @@ public class MainController implements Initializable {
 
     }
 
-
-
-
-
+    @FXML
+    void deletePartsButtonClick(ActionEvent event) {
+        Part part = partsTable.getSelectionModel().getSelectedItem();
+        if (part != null) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Delete Part");
+            alert.setHeaderText("Are you sure you want to delete this part?");
+            alert.setContentText("Click OK to confirm or Cancel to go back.");
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    deletePart(part);
+                }
+            });
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No part selected");
+            alert.setContentText("Please select a part to delete");
+            alert.showAndWait();
+        }
+    }
 
 
     @FXML
@@ -135,11 +163,25 @@ public class MainController implements Initializable {
 
     @FXML
     void modifyProductButtonClick(ActionEvent event) {
-        try {
-            new ModifyProductsApplication().start(new Stage());
-        } catch (Exception e) {
-            e.printStackTrace();
-
+        if (productsTable.getSelectionModel().getSelectedItem() != null) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/jarod/inventorymanagementsystem/modifyProduct.fxml"));
+                Parent root = loader.load();
+                ModifyProductsController controller = loader.getController();
+                controller.retrieveProductData(productsTable.getSelectionModel().getSelectedItem());
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No product selected");
+            alert.setContentText("Please select a product to modify");
+            alert.showAndWait();
         }
     }
 
@@ -169,17 +211,27 @@ public class MainController implements Initializable {
     }
 
 
-
-
-    @FXML
-    void deletePartsButtonClick(ActionEvent event) {
-
-    }
-
-
     @FXML
     void deleteProductsButtonClick(ActionEvent event) {
-
+        Product product = productsTable.getSelectionModel().getSelectedItem();
+        if (product != null) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Delete Product");
+            alert.setHeaderText("Are you sure you want to delete this product?");
+            alert.setContentText("Click OK to confirm or Cancel to go back.");
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    deleteProduct(product);
+                }
+            });
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("No product selected");
+            alert.setContentText("Please select a product to delete");
+            alert.showAndWait();
+        }
     }
 
 

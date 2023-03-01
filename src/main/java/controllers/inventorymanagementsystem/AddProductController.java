@@ -106,7 +106,6 @@ public class AddProductController {
     }
 
     public void cancelAddProductButtonClick() {
-        // Alert to confirm closing window
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Close Add Product?");
         alert.setHeaderText("Are you sure you want to close this window?");
@@ -132,7 +131,6 @@ public class AddProductController {
                     parts.add(part);
                 }
             } catch (NumberFormatException e) {
-                // Do nothing
             }
             partsTable.setItems(parts);
         }
@@ -155,7 +153,6 @@ public class AddProductController {
     }
 
     public void addProductRemovePartClick() {
-        // Remove selected part from table
         Part part = (Part) addProductTable.getSelectionModel().getSelectedItem();
         if (part != null) {
             // Alert to confirm removing part

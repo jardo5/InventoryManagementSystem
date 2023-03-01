@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b277f7f3-9165-41d7-9883-fadce7b7e41c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/modifyPart.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddPartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddPartsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/ModifyPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/ModifyPartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/ModifyProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/ModifyProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/ModifyPartsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/ModifyPartApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/ModifyProductsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jarod/inventorymanagementsystem/ModifyProductsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/addProduct.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Outsourced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Outsourced.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/modifyParts.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/modifyProducts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jarod/inventorymanagementsystem/modifyProduct.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,26 +56,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/Jarod/Desktop/Docs/InventoryManagementSystem/src/main/java/jarod/inventorymanagementsystem&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jarod/Desktop/Docs/InventoryManagementSystem/src/main/java/models/inventorymanagementsystem&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "C:/Users/Jarod/Desktop/Docs/InventoryManagementSystem/src/main/java/jarod/inventorymanagementsystem",
+    "last_opened_file_path": "C:/Users/Jarod/Desktop/Docs/InventoryManagementSystem/src/main/resources/jarod/inventorymanagementsystem",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jarod\Desktop\Docs\InventoryManagementSystem\src\main\resources\jarod\inventorymanagementsystem" />
       <recent name="C:\Users\Jarod\Desktop\Docs\InventoryManagementSystem\src\main\java\models\inventorymanagementsystem" />
       <recent name="C:\Users\Jarod\Desktop\Docs\InventoryManagementSystem\src\main\controllers" />
     </key>
@@ -99,7 +110,7 @@
       <workItem from="1677347033001" duration="53000" />
       <workItem from="1677347103293" duration="12588000" />
       <workItem from="1677437234655" duration="2409000" />
-      <workItem from="1677627019010" duration="1031000" />
+      <workItem from="1677627019010" duration="10202000" />
     </task>
     <servers />
   </component>
@@ -123,7 +134,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java</url>
-          <line>146</line>
+          <line>188</line>
           <properties class="controllers.inventorymanagementsystem.MainController" method="searchProductFieldClick">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -132,12 +143,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java</url>
-          <line>121</line>
-          <properties class="controllers.inventorymanagementsystem.AddProductController" method="searchPartFieldClick">
+          <line>107</line>
+          <properties class="controllers.inventorymanagementsystem.AddProductController" method="cancelAddProductButtonClick">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java</url>
+          <line>56</line>
+          <properties class="controllers.inventorymanagementsystem.MainController" method="initialize">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java</url>
+          <line>138</line>
+          <properties class="controllers.inventorymanagementsystem.AddProductController" method="addProductAddButtonClick">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java</url>
@@ -145,10 +174,18 @@
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java</url>
-          <line>157</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/src/main/java/models/inventorymanagementsystem/Inventory.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="22" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="24" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

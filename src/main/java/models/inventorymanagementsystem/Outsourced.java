@@ -12,7 +12,7 @@ public class Outsourced extends Part {
         this.companyName = companyName;
     }
 
-    public String getCompanyName(String companyName){
+    public String getCompanyName(){
         return companyName;
     }
 }
