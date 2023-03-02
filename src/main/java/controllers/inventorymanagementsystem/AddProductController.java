@@ -179,7 +179,7 @@ public class AddProductController {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Invalid Input");
-                alert.setContentText("Please enter valid values for minimum, maximum, and inventory fields.\n(min < max and min <= inventory <= max)");
+                alert.setContentText("Please enter valid values for minimum, maximum, and inventory fields.\n(min < max and min <= stock <= max)");
                 alert.showAndWait();
                 return;
             }
