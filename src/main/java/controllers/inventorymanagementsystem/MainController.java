@@ -172,6 +172,10 @@ public class MainController implements Initializable {
     /**
      * Allows the user to search for a part by name or ID
      * @param event on click text field will search for part
+     *
+     * RUNTIME_ERROR: I kept getting a runtime error when I tried to search for the part due to the fact I had a for loop wihtin the lookUpPart method that was returning the list prior to the search.
+     * I fixed this by creating a new list and adding the parts to the list if they matched the search criteria.
+     * FUTURE_ENHANCEMENT: Adding a way to search for parts by price or inventory would be an enhancement to the search functionality.
      */
 
     @FXML

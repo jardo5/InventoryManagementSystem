@@ -85,7 +85,7 @@ public class AddPartsController implements Initializable {
 
     public void onSaveAddPartButton(ActionEvent actionEvent) throws IOException {
         int stock = 0;
-        int min;
+        int min = 0;
         int max = 0;
         int id = Inventory.increasePartID();
         String companyName;
@@ -94,32 +94,14 @@ public class AddPartsController implements Initializable {
         try {
             String name = addPartName.getText();
             stock = Integer.parseInt(addPartInventory.getText());
-            try {
-                if (stock < 0) {
-                    throw new NumberFormatException();
-                }
-            } catch (NumberFormatException e) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Invalid Inventory");
-                alert.setContentText("Inventory must be greater than 0.");
-                alert.showAndWait();
-                return;
-            }
             price = Double.parseDouble(addPartPrice.getText());
             min = Integer.parseInt(addPartMin.getText());
             max = Integer.parseInt(addPartMax.getText());
-            try {
-                if (min > stock && stock > max) {
-                    throw new NumberFormatException();
-                }
-            } catch (NumberFormatException e) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Invalid Inventory");
-                alert.setContentText("Inventory must be between minimum and maximum values.");
-                alert.showAndWait();
-                return;
+            if (min >= max) {
+                throw new NumberFormatException();
+            }
+            if (stock < min || stock > max) {
+                throw new NumberFormatException();
             }
             if (radioInHouse.isSelected()) {
                 machineId = Integer.parseInt(addPartIDOrName.getText());
@@ -136,10 +118,14 @@ public class AddPartsController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Invalid Input");
-            alert.setContentText("Please enter valid values for each field.");
+            if (min >= max) {
+                alert.setContentText("Minimum must be less than maximum.");
+            } else {
+                alert.setContentText("Inventory must be between minimum and maximum values.");
+            }
             alert.showAndWait();
-            return;
         }
+
     }
     /**
      * Method that on cancel button click, closes the window.

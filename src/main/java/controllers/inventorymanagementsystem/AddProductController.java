@@ -169,15 +169,17 @@ public class AddProductController {
             min = Integer.parseInt(addProductMin.getText());
             max = Integer.parseInt(addProductMax.getText());
             try {
-                if (min > stock && stock > max) {
+                if (min >= max) {
                     throw new NumberFormatException();
-
+                }
+                if (stock < min || stock > max) {
+                    throw new NumberFormatException();
                 }
             } catch (NumberFormatException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setHeaderText("Invalid Inventory");
-                alert.setContentText("Inventory must be between minimum and maximum values.");
+                alert.setHeaderText("Invalid Input");
+                alert.setContentText("Please enter valid values for minimum, maximum, and inventory fields.\n(min < max and min <= inventory <= max)");
                 alert.showAndWait();
                 return;
             }
@@ -188,7 +190,7 @@ public class AddProductController {
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Invalid input");
+            alert.setHeaderText("Invalid Input");
             alert.setContentText("Please enter a valid value for each field.");
             alert.showAndWait();
         }
