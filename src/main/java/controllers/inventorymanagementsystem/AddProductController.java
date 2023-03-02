@@ -262,6 +262,7 @@ public class AddProductController {
     public void addProductRemovePartClick() {
         Part part = (Part) addProductTable.getSelectionModel().getSelectedItem();
         if (part != null) {
+
             // Alert to confirm removing part
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Remove Part?");

@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b277f7f3-9165-41d7-9883-fadce7b7e41c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddPartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddPartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/MainController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +99,7 @@
       <workItem from="1677347103293" duration="12588000" />
       <workItem from="1677437234655" duration="2409000" />
       <workItem from="1677627019010" duration="15329000" />
-      <workItem from="1677795268929" duration="353000" />
+      <workItem from="1677795268929" duration="1001000" />
     </task>
     <servers />
   </component>
@@ -132,7 +132,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java</url>
-          <line>196</line>
+          <line>198</line>
           <properties class="controllers.inventorymanagementsystem.AddProductController" method="cancelAddProductButtonClick">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -150,7 +150,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/controllers/inventorymanagementsystem/AddProductController.java</url>
-          <line>238</line>
+          <line>240</line>
           <properties class="controllers.inventorymanagementsystem.AddProductController" method="addProductAddButtonClick">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

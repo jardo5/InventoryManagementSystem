@@ -311,6 +311,14 @@ public class MainController implements Initializable {
     void deleteProductsButtonClick(ActionEvent event) {
         Product product = productsTable.getSelectionModel().getSelectedItem();
         if (product != null) {
+            if (product.getAllAssociatedParts().size() > 0) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Product has associated parts");
+                alert.setContentText("Please remove all associated parts before deleting the product");
+                alert.showAndWait();
+                return;
+            }
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Delete Product");
             alert.setHeaderText("Are you sure you want to delete this product?");
